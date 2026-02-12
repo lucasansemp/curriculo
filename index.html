@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Ansem Passos | Currículo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+        }
+
+        .light-theme {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --accent-color: #0284c7;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            background: var(--card-bg);
+            max-width: 850px;
+            width: 100%;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-grid a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .company {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .role {
+            display: block;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--border-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        #theme-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        #theme-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        @media print {
+            #theme-btn { display: none; }
+            body { padding: 0; background: white; }
+            .resume-container { box-shadow: none; border: none; max-width: 100%; padding: 0; }
+            .light-theme { --bg-color: #fff; --card-bg: #fff; }
+        }
+
+        @media (max-width: 600px) {
+            .resume-container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <button id="theme-btn">Alternar Tema</button>
+
+        <header>
+            <h1>Lucas Ansem Passos</h1>
+            <p class="tagline">Assistente Operacional & Estudante de Análise e Desenvolvimento de Sistemas</p>
+            
+            <div class="contact-grid">
+                <span>📍 Timbó/SC (Disponível para Floripa)</span>
+                <span>🎂 26 anos</span>
+                <span>📱 (47) 9XXXX-XXXX</span>
+                <span>📧 <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></span>
+                <span>💻 <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></span>
+            </div>
+        </header>
+
+        <main>
+            <section id="sobre">
+                <h2>Perfil</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                    Profissional com sólida experiência em rotinas administrativas, faturamento e gestão de suprimentos. 
+                    Atualmente migrando para a área de tecnologia, unindo a visão de negócio adquirida na UFSC com o 
+                    desenvolvimento técnico em ADS. Foco em organização, processos e automação.
+                </p>
+            </section>
+
+            <section id="formacao">
+                <h2>Educação</h2>
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="company">Análise e Desenvolvimento de Sistemas</span>
+                        <span class="date">Cursando</span>
+                    </div>
+                    <span class="role">Uniasselvi</span>
+                </div>
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="company">Administração</span>
+                        <span class="date">2017.2 - Interrompido</span>
+                    </div>
+                    <span class="role">UFSC - Universidade Federal de Santa Catarina</span>
+                </div>
+            </section>
+
+            <section id="experiencia">
+                <h2>Trajetória Profissional</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="company">TerraBase Terraplenagem Ltda</span>
+                        <span class="date">08/2024 — Atual</span>
+                    </div>
+                    <span class="role">Assistente Operacional</span>
+                    <ul>
+                        <li>Gestão administrativa e operacional da unidade de pedreira.</li>
+                        <li>Controle integral de estoque e gestão do escritório local.</li>
+                        <li>Emissão de Notas Fiscais (NFe) de entrada e saída.</li>
+                        <li>Responsável pela organização de fluxos de trabalho e suporte à diretoria.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="company">FG Soluções Ambientais Ltda</span>
+                        <span class="date">09/2023 — 05/2024</span>
+                    </div>
+                    <span class="role">Assistente de Compras</span>
+                    <ul>
+                        <li>Atuação estratégica no setor de suprimentos e aquisições.</li>
+                        <li>Negociação direta com fornecedores visando otimização de custos e prazos.</li>
+                        <li>Responsável pela cotação e acompanhamento de pedidos de compra.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Habilidades & Tech Stack</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Excel Avançado</span>
+                    <span class="skill-tag">Gestão de Estoque</span>
+                    <span class="skill-tag">Faturamento (NFe)</span>
+                    <span class="skill-tag">Hardware & Manutenção</span>
+                    <span class="skill-tag">GitHub</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const body = document.body;
+
+        // Alternar Tema
+        btn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            btn.innerText = isLight ? "Modo Escuro" : "Modo Claro";
+            
+            // Salva a preferência do usuário
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // Carregar tema salvo
+        if(localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            btn.innerText = "Modo Escuro";
+        }
+
+        // Easter Egg para Recrutadores Tech
+        console.log(
+            "%c Olá, recrutador(a)! ", 
+            "background: #38bdf8; color: #000; font-size: 20px; font-weight: bold;"
+        );
+        console.log("Este currículo foi desenvolvido em HTML/CSS/JS por Lucas Ansem Passos.");
+        console.log("Se você está lendo isso, sabe que organização de código e curiosidade técnica são diferenciais!");
+    </script>
+</body>
+</html>
